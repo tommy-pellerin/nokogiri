@@ -39,7 +39,12 @@ page = Nokogiri::HTML(URI.open(PAGE_URL))
 
 # comprendre le Xpath
 
-	doc = Nokogiri::HTML(open('http://www.google.com/search?q=doughnuts'))
-	doc.xpath('//h3/a').each do |node|
-	  puts node.text
-	end
+doc = Nokogiri::HTML(<<EOT)
+<html>
+ <body>
+ <p>foo</p>
+ <p>bar</p>
+ </body>
+</html>
+EOT
+puts doc.at('p').text # => "foo"
