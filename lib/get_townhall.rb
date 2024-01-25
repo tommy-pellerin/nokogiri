@@ -50,7 +50,7 @@ def get_townhall_urls
   return town_hash
 end
 
-puts get_townhall_urls.inspect
+get_townhall_urls
 
 
 
